@@ -1,0 +1,12 @@
+version: '2'
+services:
+  spectacle:
+    build:
+      context: ./spectacle
+      args:
+        app_env: ${APP_ENV}
+    volumes:
+      - ./spectacle:/spectacle
+    ports:
+      - "3000:3000"
+    network_mode: bridge

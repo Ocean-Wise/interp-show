@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CodePane /> should render correctly. 1`] = `
+<CodePane
+  lang="jsx"
+  source="
+      const myButton = (
+        <CustomButton
+          style={{ background: '#f00' }}
+          onClick={this.action}
+        >
+         Click Me
+        </CustomButton>
+      );
+    "
+>
+  <Styled(pre)
+    className={undefined}
+    styles={
+      Array [
+        Object {},
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <pre
+      className="css-0"
+    >
+      <Styled(code)
+        className="language-jsx"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+                const myButton = (
+                  &lt;CustomButton
+                    style={{ background: '#f00' }}
+                    onClick={this.action}
+                  &gt;
+                   Click Me
+                  &lt;/CustomButton&gt;
+                );
+              ",
+          }
+        }
+        styles={undefined}
+      >
+        <code
+          className="language-jsx css-0"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "
+                  const myButton = (
+                    &lt;CustomButton
+                      style={{ background: '#f00' }}
+                      onClick={this.action}
+                    &gt;
+                     Click Me
+                    &lt;/CustomButton&gt;
+                  );
+                ",
+            }
+          }
+        />
+      </Styled(code)>
+    </pre>
+  </Styled(pre)>
+</CodePane>
+`;
