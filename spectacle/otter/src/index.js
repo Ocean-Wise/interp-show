@@ -30,6 +30,7 @@ const images = {
 
 const videos = {
   otter: require('../assets/otter.mp4'),
+  meetOtters: require('../assets/interpVids/meetOtters.mp4'),
 };
 
 preloader(images);
@@ -62,9 +63,13 @@ export default class Otter extends React.Component {
 
   render() {
 
-  var otterVideo =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
-                      <source src={videos.otter} type="video/mp4" />
-                    </Video>);
+    var otterVideo =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={videos.otter} type="video/mp4" />
+                      </Video>);
+
+    var meetOtters =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={videos.meetOtters} type="video/mp4" />
+                      </Video>);
 
     return (
       <Deck transition={['zoom', 'slide']} theme={theme} progress="none" transitionDuration={500}>
@@ -117,6 +122,10 @@ export default class Otter extends React.Component {
             <Appear><ListItem>Mak</ListItem></Appear>
             <Appear><ListItem>Hardy</ListItem></Appear>
           </List>
+        </Slide>
+        <Slide transition={['zoom']}>
+          <Heading size={2} caps textColor="black">Meet the Otters</Heading>
+          {meetOtters}
         </Slide>
         <Slide transition={['slide']}>
           <Heading size={2} caps textColor="black">How you can help</Heading>

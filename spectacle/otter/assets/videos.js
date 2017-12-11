@@ -150,7 +150,7 @@ export default class Videos extends Component {
       <div style={this.state.src == "" || this.state.src == "null" || this.state.src == videos.oil ? mainStyle : null}>
       {this.state.src == "" ?
         <div>
-          <button style={styles} type="button" onClick={this.otter}>Otters</button>
+          {/* <button style={styles} type="button" onClick={this.otter}>Otters</button> */}
           <button style={styles} type="button" onClick={this.kelpForest}>Kelp Forest</button>
           <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button>
           <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button>
