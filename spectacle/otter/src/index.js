@@ -12,7 +12,8 @@ import preloader from '../../src/utils/preloader';
 
 import createTheme from '../../src/themes/oceanwise';
 
-import Videos from '../assets/videos';
+import Videos1 from '../assets/videos1';
+import Videos2 from '../assets/videos2';
 
 import DistMaps from '../assets/distmaps';
 import KelpForest from '../assets/kelpforest';
@@ -25,12 +26,15 @@ require('../../src/themes/oceanwise/index.css');
 const images = {
   historical: require('../assets/historical.png'),
   remnant: require('../assets/remnant.png'),
-  present: require('../assets/present.png')
+  present: require('../assets/present.png'),
+  kelp: require('../assets/kelp.jpg'),
 };
 
 const videos = {
   otter: require('../assets/otter.mp4'),
   meetOtters: require('../assets/interpVids/meetOtters.mp4'),
+  kelp: require('../assets/kelpForest.mp4'),
+  slideshow: require('../assets/rescueSlideshow.mp4'),
 };
 
 preloader(images);
@@ -57,7 +61,6 @@ const styles = {
   textDecoration: "none"
 };
 
-
 export default class Otter extends React.Component {
 
 
@@ -67,74 +70,50 @@ export default class Otter extends React.Component {
                         <source src={videos.otter} type="video/mp4" />
                       </Video>);
 
+    var kelpVideo = (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={videos.kelp} type="video/mp4" />
+                     </Video>);
+
     var meetOtters =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
                         <source src={videos.meetOtters} type="video/mp4" />
                       </Video>);
 
+    var rescueVideo = (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={videos.slideshow} type="video/mp4" />
+                      </Video>);
+
     return (
-      <Deck transition={['zoom', 'slide']} theme={theme} progress="none" transitionDuration={500}>
-        <Slide transition={['fade']} bgColor="primary" textFont="primary">
+      <Deck transition={['fade', 'slide']} theme={theme} progress="none" contentHeight="1000" contentWidth="1300" transitionDuration={500}>
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           {otterVideo}
         </Slide>
-        <Slide transition={['zoom']} bgColor="primary" textFont="primary">
-          <Heading size={1} caps fit textColor="black">
-            Have you seen a wild sea otter?
-          </Heading>
-        </Slide>
-        <Slide transition={['zoom']}>
-          <List>
-            <ListItem>Often people in BC <i>think</i> they have seen a sea otter but have instead seen river otters.</ListItem>
-            <Appear><ListItem>There are many species of river otter all over the world but there is only one species of sea otter and they only live in one ocean in the world.</ListItem></Appear>
-            <Appear><ListItem>Which ocean?</ListItem></Appear>
-          </List>
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary" textFont="primary">
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           <DistMaps />
         </Slide>
-        <Slide transition={['zoom']} bgColor="primary" textFont="primay">
-          {otterVideo}
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+          {kelpVideo}
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textFont="primary">
-          <Heading size={1} caps textColor="black">Fur trade</Heading>
-          <List>
-            <Appear><ListItem>Densest fur in the animal kingdom</ListItem></Appear>
-            <Appear><ListItem>Guard hairs versus under fur</ListItem></Appear>
-            <Appear><ListItem>Loose fur, to enable grooming</ListItem></Appear>
-          </List>
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+          <Videos1/>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textFont="primary">
-          <DistMaps />
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+          <Videos2/>
         </Slide>
-        <Slide transition={['zoom']} bgColor="primary" textFont="primay">
-          <Videos/>
-        </Slide>
-        {/* <Slide transition={['slide']}>
-          <Heading size={1} caps fit textColor="black">Role in the Ecosystem</Heading>
-          <KelpForest />
-        </Slide> */}
-        <Slide transition={['scale']}>
-          <Heading size={2} caps textColor="black">Who do we have at the aquarium?</Heading>
-          <List>
-            <Appear><ListItem>Tanu</ListItem></Appear>
-            <Appear><ListItem>Katmai</ListItem></Appear>
-            <Appear><ListItem>Rialto</ListItem></Appear>
-            <Appear><ListItem>Kunik</ListItem></Appear>
-            <Appear><ListItem>Mak</ListItem></Appear>
-            <Appear><ListItem>Hardy</ListItem></Appear>
-          </List>
-        </Slide>
-        <Slide transition={['zoom']}>
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           <Heading size={2} caps textColor="black">Meet the Otters</Heading>
           {meetOtters}
         </Slide>
-        <Slide transition={['slide']}>
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
+          {rescueVideo}
+        </Slide>
+        {/* <Slide transition={['slide']}>
           <Heading size={2} caps textColor="black">How you can help</Heading>
           <List>
             <Appear><ListItem>Use environmentally friendly cleaners</ListItem></Appear>
             <Appear><ListItem>Don't approach sea otters out in the ocean</ListItem></Appear>
             <Appear><ListItem>Continue to redure your need for petroleum products as that has contributed to their decline in the past</ListItem></Appear>
           </List>
-        </Slide>
+        </Slide> */}
         <Slide transition={['scale']}>
           <a style={styles} href="../">Back to Presentations</a>
         </Slide>

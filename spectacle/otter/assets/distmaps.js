@@ -27,19 +27,19 @@ export default class DistMaps extends Component {
   historical() {
     this.setState({
       src: images.historical,
-      name: "Historical Range &mdash; Pre 1700's"
+      name: "Historical Range -- Pre 1700's"
     });
   }
   remnant() {
     this.setState({
       src: images.remnant,
-      name: "Remnant Colonies &mdash; Mid 1700 to Early 1900"
+      name: "Remnant Colonies -- Mid 1700 to Early 1900"
     });
   }
   present() {
     this.setState({
       src: images.present,
-      name: "Present Range -- 1989 to Present"
+      name: "Present Range"
     });
   }
 

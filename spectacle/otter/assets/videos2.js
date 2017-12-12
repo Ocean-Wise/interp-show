@@ -16,9 +16,12 @@ const videos = {
 
 const images = {
   surgery: require('./interpVids/wallySurgery.jpg'),
-  tube: require('./interpVids/wallyTube.jpg')
+  tube: require('./interpVids/wallyTube.jpg'),
+  kelp: require('./kelp.svg'),
+  urchin: require('./sea-urchin.svg'),
+  otter: require('./otter.svg'),
+  ball: require('./football.svg'),
 };
-
 export default class Videos extends Component {
   constructor() {
     super();
@@ -145,19 +148,41 @@ export default class Videos extends Component {
       bottom: 100
     }
 
+    const credit = {
+      color: "black",
+      position: "absolute",
+      bottom: -250,
+      right: 1000,
+      fontSize: "1rem"
+    }
+
+    const noDecoration = {
+      textDecoration: "none",
+      color: "black"
+    }
+
+    const hoverStyle = {
+      cursor: "pointer",
+      height: 250,
+      width: 250,
+      margin: "0px 15px 0px 15px"
+    };
 
     return (
       <div style={this.state.src == "" || this.state.src == "null" || this.state.src == videos.oil ? mainStyle : null}>
       {this.state.src == "" ?
         <div>
           {/* <button style={styles} type="button" onClick={this.otter}>Otters</button> */}
-          <button style={styles} type="button" onClick={this.kelpForest}>Kelp Forest</button>
-          <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button>
-          <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button>
-          <button style={styles} type="button" onClick={this.otterEating}>Otter Eating</button>
-          <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button>
-          <button style={styles} type="button" onClick={this.oil}>Oil Spill</button>
-          <button style={styles} type="button" onClick={this.wally}>Wally's Rescue</button>
+          {/* <button style={styles} type="button" onClick={this.kelpForest}>Kelp Forest</button> */}
+          {/* <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button> */}
+          <a onClick={this.hardy}><img style={hoverStyle} src={images.otter} alt="Hardy Profile"/></a>
+          <a onClick={this.enrichment}><img style={hoverStyle} src={images.ball} alt="Enrichment"/></a>
+          {/* <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button> */}
+          {/* <button style={styles} type="button" onClick={this.otterEating}>Otter Eating</button> */}
+          {/* <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button> */}
+          {/* <button style={styles} type="button" onClick={this.oil}>Oil Spill</button> */}
+          {/* <button style={styles} type="button" onClick={this.wally}>Wally's Rescue</button> */}
+          <div style={credit}>Icons made by <a style={noDecoration} href="http://www.freepik.com" title="Freepik">Freepik</a> from <a style={noDecoration} href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a style={noDecoration} href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         </div> :
         videoBlock
         }
