@@ -83,7 +83,7 @@ export default class Otter extends React.Component {
                       </Video>);
 
     return (
-      <Deck transition={['fade', 'slide']} theme={theme} progress="none" contentHeight="1000" contentWidth="1300" transitionDuration={500}>
+      <Deck transition={['fade', 'slide']} theme={theme} progress="none" contentHeight={1000} contentWidth={1300} transitionDuration={500}>
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           {otterVideo}
         </Slide>
