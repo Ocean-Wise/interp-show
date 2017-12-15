@@ -90,9 +90,9 @@ export default class Otter extends React.Component {
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           <DistMaps />
         </Slide>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+        {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
           {kelpVideo}
-        </Slide>
+        </Slide> */}
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
           <Videos1/>
         </Slide>
@@ -103,9 +103,9 @@ export default class Otter extends React.Component {
           <Heading size={2} caps textColor="black">Meet the Otters</Heading>
           {meetOtters}
         </Slide>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
+        {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           {rescueVideo}
-        </Slide>
+        </Slide> */}
         {/* <Slide transition={['slide']}>
           <Heading size={2} caps textColor="black">How you can help</Heading>
           <List>

@@ -19,7 +19,7 @@ const images = {
   tube: require('./interpVids/wallyTube.jpg'),
   kelp: require('./kelp.svg'),
   urchin: require('./sea-urchin.svg'),
-  otter: require('./otter.svg'),
+  otter: require('./otter.png'),
   ball: require('./football.svg'),
 };
 
@@ -153,7 +153,7 @@ export default class Videos extends Component {
       cursor: "pointer",
       height: 250,
       width: 250,
-      margin: "0px 15px 0px 15px"
+      margin: "0px 45px"
     };
 
     const credit = {

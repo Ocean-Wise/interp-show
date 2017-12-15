@@ -11,7 +11,8 @@ const videos = {
   hardy: require('./interpVids/hardyCare.mp4'),
   enrichment: require('./interpVids/hardyPlay.mp4'),
   oil: require('./interpVids/oilSpill.mp4'),
-  wally: require('./interpVids/wallyRescue.mp4')
+  wally: require('./interpVids/wallyRescue.mp4'),
+  rescue: require('./rescueSlideshow.mp4'),
 };
 
 const images = {
@@ -19,8 +20,9 @@ const images = {
   tube: require('./interpVids/wallyTube.jpg'),
   kelp: require('./kelp.svg'),
   urchin: require('./sea-urchin.svg'),
-  otter: require('./otter.svg'),
+  otter: require('./otter.png'),
   ball: require('./football.svg'),
+  rescue: require('./rescue.svg'),
 };
 export default class Videos extends Component {
   constructor() {
@@ -39,6 +41,7 @@ export default class Videos extends Component {
     this.oil = this.oil.bind(this);
     this.wally = this.wally.bind(this);
     this.wallyVid = this.wallyVid.bind(this);
+    this.rescue = this.rescue.bind(this);
   }
   reset() {
     this.setState({
@@ -80,6 +83,11 @@ export default class Videos extends Component {
   oil() {
     this.setState({
       src: videos.oil
+    });
+  }
+  rescue() {
+    this.setState({
+      src: videos.rescue
     });
   }
   wally() {
@@ -165,7 +173,7 @@ export default class Videos extends Component {
       cursor: "pointer",
       height: 250,
       width: 250,
-      margin: "0px 15px 0px 15px"
+      margin: "0px 45px"
     };
 
     return (
@@ -177,6 +185,7 @@ export default class Videos extends Component {
           {/* <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button> */}
           <a onClick={this.hardy}><img style={hoverStyle} src={images.otter} alt="Hardy Profile"/></a>
           <a onClick={this.enrichment}><img style={hoverStyle} src={images.ball} alt="Enrichment"/></a>
+          <a onClick={this.rescue}><img style={hoverStyle} src={images.rescue} alt="Otter Rescue"/></a>
           {/* <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button> */}
           {/* <button style={styles} type="button" onClick={this.otterEating}>Otter Eating</button> */}
           {/* <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button> */}
