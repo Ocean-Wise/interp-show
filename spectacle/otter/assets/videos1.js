@@ -4,23 +4,15 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import '../../node_modules/react-html5video/dist/styles.css';
 
 const videos = {
-  otter: require('./interpVids/meetOtters.mp4'),
-  kelpForest: require('./kelpForest.mp4'),
   urchinsEating: require('./interpVids/urchin.mp4'),
-  otterEating: require('./interpVids/otterEating.mp4'),
-  hardy: require('./interpVids/hardyCare.mp4'),
-  enrichment: require('./interpVids/hardyPlay.mp4'),
-  oil: require('./interpVids/oilSpill.mp4'),
-  wally: require('./interpVids/wallyRescue.mp4')
+  otterEating: require('./videos/otter.mp4'),
+  kelpForest: require('./videos/kelp.mp4'),
 };
 
 const images = {
-  surgery: require('./interpVids/wallySurgery.jpg'),
-  tube: require('./interpVids/wallyTube.jpg'),
-  kelp: require('./kelp.svg'),
+  kelp: require('./coral.svg'),
   urchin: require('./sea-urchin.svg'),
-  otter: require('./otter.png'),
-  ball: require('./football.svg'),
+  otter: require('./sea-otter-1.svg'),
 };
 
 export default class Videos extends Component {

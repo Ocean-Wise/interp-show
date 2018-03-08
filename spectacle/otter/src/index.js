@@ -31,10 +31,17 @@ const images = {
 };
 
 const videos = {
-  otter: require('../assets/otter.mp4'),
+  // otter: require('../assets/otter.mp4'),
   meetOtters: require('../assets/interpVids/meetOtters.mp4'),
-  kelp: require('../assets/kelpForest.mp4'),
-  slideshow: require('../assets/rescueSlideshow.mp4'),
+  // kelp: require('../assets/kelpForest.mp4'),
+  // slideshow: require('../assets/rescueSlideshow.mp4'),
+  // Start new here
+  intro: require('../assets/videos/intro.mp4'),
+  kelp: require('../assets/videos/kelp.mp4'),
+  otter: require('../assets/videos/otter.mp4'),
+  slideshow: require('../assets/videos/slideshow.mp4'),
+  babyOtter: require('../assets/videos/babyOtter.mp4'),
+  enrichment: require('../assets/videos/enrichment.mp4'),
 };
 
 preloader(images);
@@ -66,8 +73,8 @@ export default class Otter extends React.Component {
 
   render() {
 
-    var otterVideo =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
-                        <source src={videos.otter} type="video/mp4" />
+    var introVideo =  (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={videos.intro} type="video/mp4" />
                       </Video>);
 
     var kelpVideo = (<Video id="theVideo" autoPlay loop controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
@@ -85,7 +92,7 @@ export default class Otter extends React.Component {
     return (
       <Deck transition={['fade', 'slide']} theme={theme} progress="none" contentHeight={1000} contentWidth={1300} transitionDuration={500}>
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
-          {otterVideo}
+          {introVideo}
         </Slide>
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           <DistMaps />
@@ -103,17 +110,6 @@ export default class Otter extends React.Component {
           <Heading size={2} caps textColor="black">Meet the Otters</Heading>
           {meetOtters}
         </Slide>
-        {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
-          {rescueVideo}
-        </Slide> */}
-        {/* <Slide transition={['slide']}>
-          <Heading size={2} caps textColor="black">How you can help</Heading>
-          <List>
-            <Appear><ListItem>Use environmentally friendly cleaners</ListItem></Appear>
-            <Appear><ListItem>Don't approach sea otters out in the ocean</ListItem></Appear>
-            <Appear><ListItem>Continue to redure your need for petroleum products as that has contributed to their decline in the past</ListItem></Appear>
-          </List>
-        </Slide> */}
         <Slide transition={['scale']}>
           <a style={styles} href="../">Back to Presentations</a>
         </Slide>
