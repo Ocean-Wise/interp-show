@@ -10,7 +10,7 @@ const videos = {
 };
 
 const images = {
-  otter: require('./sea-otter-2.svg'),
+  otter: require('./sea-otter-1.svg'),
   ball: require('./sea-otter-3.svg'),
   rescue: require('./rescue.svg'),
 };
@@ -174,14 +174,13 @@ export default class Videos extends Component {
           {/* <button style={styles} type="button" onClick={this.kelpForest}>Kelp Forest</button> */}
           {/* <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button> */}
           <a onClick={this.hardy}><img style={hoverStyle} src={images.otter} alt="Hardy Profile"/></a>
-          <a onClick={this.enrichment}><img style={hoverStyle} src={images.ball} alt="Enrichment"/></a>
           <a onClick={this.rescue}><img style={hoverStyle} src={images.rescue} alt="Otter Rescue"/></a>
+          <a onClick={this.enrichment}><img style={hoverStyle} src={images.ball} alt="Enrichment"/></a>
           {/* <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button> */}
           {/* <button style={styles} type="button" onClick={this.otterEating}>Otter Eating</button> */}
           {/* <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button> */}
           {/* <button style={styles} type="button" onClick={this.oil}>Oil Spill</button> */}
           {/* <button style={styles} type="button" onClick={this.wally}>Wally's Rescue</button> */}
-          <div style={credit}>Icons made by <a style={noDecoration} href="http://www.freepik.com" title="Freepik">Freepik</a> from <a style={noDecoration} href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a style={noDecoration} href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         </div> :
         videoBlock
         }

@@ -4,7 +4,7 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import '../../node_modules/react-html5video/dist/styles.css';
 
 const videos = {
-  kelpForest: require('./kelpForest.mp4'),
+  kelpForest: require('./videos/kelp.mp4'),
 };
 
 export default class KelpForest extends Component {

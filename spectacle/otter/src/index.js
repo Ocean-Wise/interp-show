@@ -27,15 +27,10 @@ const images = {
   historical: require('../assets/historical.png'),
   remnant: require('../assets/remnant.png'),
   present: require('../assets/present.png'),
-  kelp: require('../assets/kelp.jpg'),
+  kelp: require('../assets/kelp2.jpg'),
 };
 
 const videos = {
-  // otter: require('../assets/otter.mp4'),
-  meetOtters: require('../assets/interpVids/meetOtters.mp4'),
-  // kelp: require('../assets/kelpForest.mp4'),
-  // slideshow: require('../assets/rescueSlideshow.mp4'),
-  // Start new here
   intro: require('../assets/videos/intro.mp4'),
   kelp: require('../assets/videos/kelp.mp4'),
   otter: require('../assets/videos/otter.mp4'),
@@ -106,10 +101,10 @@ export default class Otter extends React.Component {
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
           <Videos2/>
         </Slide>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
+        {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
           <Heading size={2} caps textColor="black">Meet the Otters</Heading>
           {meetOtters}
-        </Slide>
+        </Slide> */}
         <Slide transition={['scale']}>
           <a style={styles} href="../">Back to Presentations</a>
         </Slide>

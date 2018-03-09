@@ -4,7 +4,7 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import '../../node_modules/react-html5video/dist/styles.css';
 
 const videos = {
-  urchinsEating: require('./interpVids/urchin.mp4'),
+  urchinsEating: require('./videos/urchin.mp4'),
   otterEating: require('./videos/otter.mp4'),
   kelpForest: require('./videos/kelp.mp4'),
 };
@@ -12,7 +12,7 @@ const videos = {
 const images = {
   kelp: require('./coral.svg'),
   urchin: require('./sea-urchin.svg'),
-  otter: require('./sea-otter-1.svg'),
+  otter: require('./sea-otter-2.svg'),
 };
 
 export default class Videos extends Component {
@@ -177,7 +177,6 @@ export default class Videos extends Component {
           {/* <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button> */}
           {/* <button style={styles} type="button" onClick={this.oil}>Oil Spill</button> */}
           {/* <button style={styles} type="button" onClick={this.wally}>Wally's Rescue</button> */}
-          <div style={credit}>Icons made by <a style={noDecoration} href="http://www.freepik.com" title="Freepik">Freepik</a> from <a style={noDecoration} href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a style={noDecoration} href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         </div> :
         videoBlock
         }

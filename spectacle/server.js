@@ -4,9 +4,16 @@ var path = require("path");
 var express = require("express");
 var webpack = require("webpack");
 var config = require("./webpack.config");
+var auth = require("http-auth");
 
 var app = express();
 var compiler = webpack(config);
+
+const internalAuth = auth.basic({
+  realm: 'all',
+}, (username, password, callback) => {
+  callback(username === 'admin' && password === 'interps');
+});
 
 app.use(require("webpack-dev-middleware")(compiler, {
     noInfo: true,

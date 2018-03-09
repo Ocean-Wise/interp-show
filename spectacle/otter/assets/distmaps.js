@@ -67,7 +67,7 @@ export default class DistMaps extends Component {
           <button style={styles} type="button" onClick={this.present}>Present</button>
         </div> :
         <div>
-          <Text textSize="1.5em"  margin="20px 0px 0px" bold textColor="black">{this.state.name}</Text>
+          <Text textSize="1.5em" margin="20px 0px 0px" bold textColor="white">{this.state.name}</Text>
           <Image src={this.state.src} />
           <button style={styles} type="button" onClick={this.reset}>Back</button>
         </div>
