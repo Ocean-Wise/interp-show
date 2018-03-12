@@ -27,7 +27,7 @@ const images = {
   historical: require('../assets/historical.png'),
   remnant: require('../assets/remnant.png'),
   present: require('../assets/present.png'),
-  kelp: require('../assets/kelp2.jpg'),
+  kelp: require('../assets/background.jpg'),
 };
 
 const videos = {
@@ -86,19 +86,19 @@ export default class Otter extends React.Component {
 
     return (
       <Deck transition={['fade', 'slide']} theme={theme} progress="none" contentHeight={1000} contentWidth={1300} transitionDuration={500}>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} textFont="primary">
           {introVideo}
         </Slide>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} textFont="primary">
           <DistMaps />
         </Slide>
         {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
           {kelpVideo}
         </Slide> */}
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} textFont="primay">
           <Videos1/>
         </Slide>
-        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primay">
+        <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} textFont="primay">
           <Videos2/>
         </Slide>
         {/* <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} bgDarken="0.65" textFont="primary">

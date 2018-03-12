@@ -4,7 +4,7 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import '../../node_modules/react-html5video/dist/styles.css';
 
 const videos = {
-  urchinsEating: require('./videos/urchin.mp4'),
+  urchinsEating: require('./videos/urchinTeeth.mp4'),
   otterEating: require('./videos/otter.mp4'),
   kelpForest: require('./videos/kelp.mp4'),
 };

@@ -11,7 +11,7 @@ const videos = {
 
 const images = {
   otter: require('./sea-otter-1.svg'),
-  ball: require('./sea-otter-3.svg'),
+  ball: require('./toy.png'),
   rescue: require('./rescue.svg'),
 };
 export default class Videos extends Component {
