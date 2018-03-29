@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import Heading from "../../src/components/heading";
-import { DefaultPlayer as Video } from 'react-html5video';
-import '../../node_modules/react-html5video/dist/styles.css';
-
-const videos = {
-  hardy: require('./videos/babyOtter.mp4'),
-  enrichment: require('./videos/enrichment.mp4'),
-  rescue: require('./videos/slideshow.mp4'),
-};
+import ModalVideo from 'react-modal-video';
+require('./modal-video.css');
 
 const images = {
   otter: require('./sea-otter-1.svg'),
@@ -18,78 +11,31 @@ export default class Videos extends Component {
   constructor() {
     super();
     this.state = {
-      src: "",
-      showWally: false
+      src: '',
     };
-    this.reset = this.reset.bind(this);
-    this.otter = this.otter.bind(this);
-    this.kelpForest = this.kelpForest.bind(this);
-    this.urchinsEating = this.urchinsEating.bind(this);
-    this.otterEating = this.otterEating.bind(this);
+
     this.hardy = this.hardy.bind(this);
     this.enrichment = this.enrichment.bind(this);
-    this.oil = this.oil.bind(this);
-    this.wally = this.wally.bind(this);
-    this.wallyVid = this.wallyVid.bind(this);
     this.rescue = this.rescue.bind(this);
   }
   reset() {
     this.setState({
-      src: "",
-      showWally: false
-    });
-    // console.log(this.state.src);
-  }
-  otter() {
-    this.setState({
-      src: videos.otter
-    });
-  }
-  kelpForest() {
-    this.setState({
-      src: videos.kelpForest
-    });
-  }
-  urchinsEating() {
-    this.setState({
-      src: videos.urchinsEating
-    });
-  }
-  otterEating() {
-    this.setState({
-      src: videos.otterEating
+      src: '',
     });
   }
   hardy() {
     this.setState({
-      src: videos.hardy
+      src: 'mnogeIQjqqo'
     });
   }
   enrichment() {
     this.setState({
-      src: videos.enrichment
-    });
-  }
-  oil() {
-    this.setState({
-      src: videos.oil
+      src: 'kmCDN7W68dY'
     });
   }
   rescue() {
     this.setState({
-      src: videos.rescue
-    });
-  }
-  wally() {
-    this.setState({
-      src: "null",
-      showWally: true
-    });
-  }
-  wallyVid() {
-    this.setState({
-      src: videos.wally,
-      showWally: false
+      src: 'nuMg7X_RVAg'
     });
   }
 
@@ -122,28 +68,9 @@ export default class Videos extends Component {
       </div>
     );
 
-    var wallyBlock = this.state.showWally ? wallyImages : null;
-
-    var videoBlock = (
-      this.state.src == "null" ?
-      <div>
-      {wallyBlock}
-      <button style={styles} type="button" onClick={this.wallyVid}>Show Video</button>
-    </div>
-      :
-      <div>
-        <Video id="theVideo" autoPlay muted
-          controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-        >
-              <source src={this.state.src} type="video/mp4" />
-        </Video>
-        <button style={styles} type="button" onClick={this.reset}>Close Video</button>
-      </div>
-    );
-
     const mainStyle = {
       position: "relative",
-      bottom: 100
+      bottom: 0
     }
 
     const credit = {
@@ -167,24 +94,13 @@ export default class Videos extends Component {
     };
 
     return (
-      <div style={this.state.src == "" || this.state.src == "null" || this.state.src == videos.oil ? mainStyle : null}>
-      {this.state.src == "" ?
+      <div style={this.state.src === '' || this.state.src === 'null' ? mainStyle : null}>
         <div>
-          {/* <button style={styles} type="button" onClick={this.otter}>Otters</button> */}
-          {/* <button style={styles} type="button" onClick={this.kelpForest}>Kelp Forest</button> */}
-          {/* <button style={styles} type="button" onClick={this.urchinsEating}>Urchins Eating</button> */}
           <a onClick={this.hardy}><img style={hoverStyle} src={images.otter} alt="Hardy Profile"/></a>
           <a onClick={this.rescue}><img style={hoverStyle} src={images.rescue} alt="Otter Rescue"/></a>
           <a onClick={this.enrichment}><img style={hoverStyle} src={images.ball} alt="Enrichment"/></a>
-          {/* <button style={styles} type="button" onClick={this.hardy}>Hardy Profile</button> */}
-          {/* <button style={styles} type="button" onClick={this.otterEating}>Otter Eating</button> */}
-          {/* <button style={styles} type="button" onClick={this.enrichment}>Enrichment</button> */}
-          {/* <button style={styles} type="button" onClick={this.oil}>Oil Spill</button> */}
-          {/* <button style={styles} type="button" onClick={this.wally}>Wally's Rescue</button> */}
-        </div> :
-        videoBlock
-        }
-
+        </div>
+        <ModalVideo channel="youtube" isOpen={this.state.src !== ''} videoId={this.state.src} onClose={() => this.setState({ src: '' })} />
       </div>
     );
   }
