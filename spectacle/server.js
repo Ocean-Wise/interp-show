@@ -26,11 +26,13 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.listen(3000, '0.0.0.0', function (err) {
+const port = process.env.PORT || 3000;
+
+app.listen(port, '0.0.0.0', function (err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log("Listening at http://172.19.1.14:3000");
+  console.log(`Listening at http://0.0.0.0:${port}`);
 });

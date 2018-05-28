@@ -55,6 +55,11 @@ const styles = {
 
 export default class Otter extends React.Component {
 
+  _onEnd(evt) {
+    console.log('ended');
+    evt.target.playVideo();
+  }
+
 
   render() {
     const opts = {
@@ -62,6 +67,7 @@ export default class Otter extends React.Component {
       width: '1280',
       playerVars: {
         autoplay: 1,
+        loop: 1,
       },
     };
 
@@ -71,6 +77,7 @@ export default class Otter extends React.Component {
           <YouTube
             videoId={'kWMI1Lq-eMk'}
             opts={opts}
+            onEnd={this._onEnd}
           />
         </Slide>
         <Slide transition={['fade']} bgImage={images.kelp.replace('/', '')} textFont="primary">
